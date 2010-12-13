@@ -1,0 +1,28 @@
+[user]
+    name = "sinojelly"
+    email = sinojelly@gmail.com
+
+[color]
+    pager = true
+    ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+
+[alias]
+    br = branch
+    ci = commit 
+    cia = !git add -A && git commit
+    co = checkout
+    sb = show-branch
+    st = status
+    df = diff
+    dc = diff --cached
+    aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
+    searchcommits = "!f() { query=\"$1\"; shift; git log -S\"$query\" \"$@\"; }; f \"$@\""
+    lc = log ORIG_HEAD.. --stat --no-merges
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lgn = "!f() { git log --graph --pretty=format:'%Cred%H%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --date=relative $@ | git name-rev --stdin --name-only ; } ; f"
+    edit-last-commit = !vim `git diff-tree -r --name-only HEAD HEAD~1`
+        edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+        add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"

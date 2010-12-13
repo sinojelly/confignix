@@ -1,0 +1,45 @@
+# not test yet  -- sinojelly
+
+account gmail
+auth on
+host smtp.gmail.com
+port 587
+user sinojelly
+password 8tel5
+from sinojelly@gmail.com
+tls on
+tls_starttls true 
+tls_trust_file ~/gmail.cert
+
+account default : gmail
+
+####################################
+# set default values for all following accounts
+defaults
+
+# the smtp server of the provider
+account test
+
+host smtp.163.com
+from sinojelly@163.com
+#auth on
+user sinojelly
+password c6
+#tls_starttls off
+
+account sinojelly_gmail
+host smtp.gmail.com
+port 587
+from sinojelly@gmail.com
+tls off
+tls_certcheck off
+#tls_starttls on
+#tls_trust_file ~/gmail.cert
+#auth on
+user sinojelly
+password 8tel5
+logfile ~/.msmtp.log
+
+
+# set a default account
+account default : sinojelly_gmail

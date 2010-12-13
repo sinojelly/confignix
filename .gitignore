@@ -1,0 +1,7 @@
+*
+!.gitignore
+!.gitconfig
+!.bash_history
+!.bash_profile
+!.msmtp
+
