@@ -5,6 +5,7 @@ alias du='du -msh'
 alias ih='installhome'
 alias is='installedhome | less'
 alias uh='uninstallhome'
+alias rpm='rpm --root $HOME --rcfile .rpmrc'
 
 # ssh agent to record key automaticly
 SSH_ENV="$HOME/.ssh/environment"
